@@ -92,7 +92,7 @@ const fallbackExperiences = [
   {
     title: "B.Tech in Computer Science Engineering",
     organization: "University Institution",
-    period: "2023 - Present",
+    period: "2024 - Present",
     description:
       "Specializing in Data Structures, Algorithms, Database Management Systems, and Object-Oriented Software Design.",
   },
@@ -104,7 +104,7 @@ const fallbackExperiences = [
       "Completed rigorous tracks covering Quantum Algorithms, RSA, Advanced Searching, Sorting, and Tree/Graph traversal algorithms.",
   },
   {
-    title: "Smart India Hackathon Finalist",
+    title: "Smart India Hackathon",
     organization: "National Hackathon",
     period: "2024",
     description:
