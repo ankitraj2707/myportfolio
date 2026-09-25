@@ -49,35 +49,44 @@ async function main() {
     ],
   });
 
-  console.log("🌱 Seeding timeline with academic milestones...");
+  console.log("🌱 Seeding updated timeline with internship milestones...");
   await prisma.experience.createMany({
     data: [
       {
-        title: "B.Tech in Computer Science Engineering",
-        organization: "University Institution",
-        period: "2023 - Present",
+        title: "Full Stack Development & Gen AI Intern",
+        organization: "AstraTech AI (Prnatah Tech Solution Pvt. Ltd.)",
+        period: "May 2026 - August 2026",
         description:
-          "Specializing in Data Structures, Algorithms, Database Management Systems, and Object-Oriented Software Design.",
-        type: "education",
+          "Developed modern web applications leveraging frontend, backend, REST APIs, databases, Git/GitHub, and Generative AI service integrations.",
+        type: "experience",
         order: 1,
       },
       {
-        title: "Specialized Coursera Certifications",
-        organization: "University of Colorado Boulder",
-        period: "October 2025",
+        title: "Vocational Trainee - Data Analysis",
+        organization: "Tata Steel Ltd., Jamshedpur (SNTI)",
+        period: "June 2026",
         description:
-          "Completed rigorous tracks covering Quantum Algorithms, RSA, Advanced Searching, Sorting, and Tree/Graph traversal algorithms.",
-        type: "education",
+          "Underwent an intensive vocational training program under the Learning & Development Department focusing on real-world industrial Data Analysis.",
+        type: "experience",
         order: 2,
       },
       {
-        title: "Smart India Hackathon Finalist",
-        organization: "National Hackathon",
-        period: "2024",
+        title: "B.Tech in Computer Science Engineering",
+        organization: "ARKA JAIN University",
+        period: "2023 - Present",
         description:
-          "Architected and built a civic problem-reporting dashboard within a 36-hour sprint.",
-        type: "hackathon",
+          "Studying core Computer Science: Data Structures, Algorithms, DBMS, Operating Systems, Computer Networks, and Full-Stack Web Engineering.",
+        type: "education",
         order: 3,
+      },
+      {
+        title: "Specialized Algorithm Certifications",
+        organization: "University of Colorado Boulder (Coursera)",
+        period: "October 2025",
+        description:
+          "Completed comprehensive credentials in Advanced Data Structures, RSA, Quantum Algorithms, and Graph/Tree data algorithms.",
+        type: "education",
+        order: 4,
       },
     ],
   });
@@ -136,7 +145,7 @@ async function main() {
     ],
   });
 
-  console.log("✅ Database seeded successfully!");
+  console.log("✅ Database successfully seeded!");
 }
 
 main()

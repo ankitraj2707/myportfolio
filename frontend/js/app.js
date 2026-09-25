@@ -1,13 +1,45 @@
 const API_BASE = "http://localhost:5000/api";
 
-// Verified Certificate Data with actual Course details and Verification URLs
+// Verified Certificate Data with Courses and Internship Credentials
 const certificatesData = [
+  {
+    title: "Full Stack Development & Gen AI Internship",
+    issuer: "AstraTech AI (Prnatah Tech Solution Pvt. Ltd.)",
+    instructor: "Aniket Kumar (Program Director)",
+    issuedDate: "Aug 6, 2026",
+    verifyUrl: "https://astratechai.com/certificate",
+    certId: "AST-BACKEND-2026-044",
+    skills: [
+      "Frontend",
+      "Backend APIs",
+      "PostgreSQL",
+      "GitHub",
+      "Gen AI Integration",
+    ],
+    badgeColor: "border-violet-500/40 text-violet-400",
+  },
+  {
+    title: "Vocational Training - Data Analysis",
+    issuer: "Tata Steel Ltd., Jamshedpur (SNTI)",
+    instructor: "Learning & Development Department",
+    issuedDate: "June 30, 2026",
+    verifyUrl: "#",
+    certId: "VT20265281",
+    skills: [
+      "Data Analysis",
+      "Data Cleaning",
+      "Industrial Workflow",
+      "Analytics",
+    ],
+    badgeColor: "border-blue-500/40 text-blue-400",
+  },
   {
     title: "Advanced Data Structures, RSA and Quantum Algorithms",
     issuer: "University of Colorado Boulder (Coursera)",
     instructor: "Sriram Sankaranarayanan, PhD",
     issuedDate: "Oct 31, 2025",
     verifyUrl: "https://coursera.org/verify/JHXSMHCSJFHE",
+    certId: "JHXSMHCSJFHE",
     skills: [
       "Quantum Algorithms",
       "RSA Cryptography",
@@ -21,6 +53,7 @@ const certificatesData = [
     instructor: "Sriram Sankaranarayanan, PhD",
     issuedDate: "Oct 31, 2025",
     verifyUrl: "https://coursera.org/verify/THSPUWFLYZWC",
+    certId: "THSPUWFLYZWC",
     skills: [
       "Searching Algorithms",
       "Sorting Techniques",
@@ -35,12 +68,13 @@ const certificatesData = [
     instructor: "Sriram Sankaranarayanan, PhD",
     issuedDate: "Oct 24, 2025",
     verifyUrl: "https://coursera.org/verify/9UPO1R3ARIVK",
+    certId: "9UPO1R3ARIVK",
     skills: ["Tree Traversals", "Graph Theory", "BFS & DFS", "DAGs"],
     badgeColor: "border-emerald-500/40 text-emerald-400",
   },
 ];
 
-// Configured projects with status badges and links
+// Configured projects
 const fallbackProjects = [
   {
     id: "1",
@@ -88,27 +122,35 @@ const fallbackSkills = [
   { name: "Git & GitHub Workflows", category: "tools", level: 90 },
 ];
 
+// Real Experience & Milestones Timeline
 const fallbackExperiences = [
   {
-    title: "B.Tech in Computer Science Engineering",
-    organization: "University Institution",
-    period: "2024 - Present",
+    title: "Full Stack Development & Gen AI Intern",
+    organization: "AstraTech AI (Prnatah Tech Solution Pvt. Ltd.)",
+    period: "May 2026 - August 2026",
     description:
-      "Specializing in Data Structures, Algorithms, Database Management Systems, and Object-Oriented Software Design.",
+      "Developed modern web applications leveraging frontend, backend, REST APIs, databases, Git/GitHub, and Generative AI service integrations.",
   },
   {
-    title: "Specialized Coursera Certifications",
-    organization: "University of Colorado Boulder",
+    title: "Vocational Trainee - Data Analysis",
+    organization: "Tata Steel Ltd., Jamshedpur (SNTI)",
+    period: "June 2026 - June 2026",
+    description:
+      "Underwent an intensive vocational training program under the Learning & Development Department focusing on real-world industrial Data Analysis.",
+  },
+  {
+    title: "B.Tech in Computer Science Engineering",
+    organization: "ARKA JAIN University",
+    period: "2023 - Present",
+    description:
+      "Studying core Computer Science: Data Structures, Algorithms, DBMS, Operating Systems, Computer Networks, and Full-Stack Web Engineering.",
+  },
+  {
+    title: "Specialized Algorithm Certifications",
+    organization: "University of Colorado Boulder (Coursera)",
     period: "October 2025",
     description:
-      "Completed rigorous tracks covering Quantum Algorithms, RSA, Advanced Searching, Sorting, and Tree/Graph traversal algorithms.",
-  },
-  {
-    title: "Smart India Hackathon",
-    organization: "National Hackathon",
-    period: "2024",
-    description:
-      "Architected and built a civic problem-reporting dashboard within a 36-hour sprint.",
+      "Completed comprehensive credentials in Advanced Data Structures, RSA, Quantum Algorithms, and Graph/Tree data algorithms.",
   },
 ];
 
@@ -131,6 +173,9 @@ function setupMobileMenu() {
   const menu = document.getElementById("mobileMenu");
   if (btn && menu) {
     btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+    document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+      link.addEventListener("click", () => menu.classList.add("hidden"));
+    });
   }
 }
 
@@ -138,9 +183,7 @@ function setupScrollReveal() {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-        }
+        if (entry.isIntersecting) entry.target.classList.add("active");
       });
     },
     { threshold: 0.1 },
@@ -184,9 +227,10 @@ function renderCertificates() {
           </div>
           <span class="text-[10px] mono px-2.5 py-0.5 rounded border ${cert.badgeColor}">Verified</span>
         </div>
-        <h4 class="text-lg font-bold text-white mb-2 leading-snug">${cert.title}</h4>
-        <div class="text-xs text-slate-400 mb-1 font-medium">${cert.issuer}</div>
-        <div class="text-[11px] text-slate-500 mono mb-4">Instructor: ${cert.instructor}</div>
+        <h4 class="text-base sm:text-lg font-bold text-white mb-2 leading-snug">${cert.title}</h4>
+        <div class="text-xs text-slate-300 font-medium mb-1">${cert.issuer}</div>
+        <div class="text-[11px] text-slate-500 mono mb-1">Mentor/Dept: ${cert.instructor}</div>
+        ${cert.certId ? `<div class="text-[10px] text-cyan-400/80 mono mb-4">ID: ${cert.certId}</div>` : ""}
         
         <div class="flex flex-wrap gap-1.5 mb-6">
           ${cert.skills
@@ -200,10 +244,20 @@ function renderCertificates() {
       </div>
 
       <div class="pt-4 border-t border-slate-800/60">
-        <a href="${cert.verifyUrl}" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition">
-          <span>Verify Credential</span>
-          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-        </a>
+        ${
+          cert.verifyUrl && cert.verifyUrl !== "#"
+            ? `
+          <a href="${cert.verifyUrl}" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition">
+            <span>Verify Credential</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        `
+            : `
+          <span class="text-xs mono text-slate-500 flex items-center gap-1.5">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i> Verified by Institute
+          </span>
+        `
+        }
       </div>
     </div>
   `,
@@ -227,7 +281,7 @@ function setupGitHubMatrix() {
     const square = document.createElement("div");
     const randomShade =
       shades[Math.floor(Math.random() * (i % 6 === 0 ? shades.length : 2))];
-    square.className = `w-3 h-3 rounded-sm ${randomShade}`;
+    square.className = `w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-sm ${randomShade}`;
     matrix.appendChild(square);
   }
 }
@@ -241,7 +295,7 @@ async function fetchSkills() {
       if (data.length > 0) skills = data;
     }
   } catch (_) {
-    console.info("Backend unreachable, using fallback skills.");
+    console.info("Using fallback skills.");
   }
 
   const container = document.getElementById("skillsGrid");
@@ -259,7 +313,7 @@ async function fetchSkills() {
     .map((cat) => {
       const filtered = skills.filter((s) => s.category.toLowerCase() === cat);
       return `
-      <div class="glass-panel p-6 rounded-2xl border border-slate-800">
+      <div class="glass-panel p-5 sm:p-6 rounded-2xl border border-slate-800">
         <h4 class="text-sm font-semibold mono uppercase tracking-wider text-cyan-400 mb-6">${titles[cat]}</h4>
         <div class="space-y-4">
           ${filtered
@@ -294,7 +348,7 @@ async function fetchProjects() {
       if (data.length > 0) currentProjects = data;
     }
   } catch (_) {
-    console.info("Backend unreachable, using fallback projects.");
+    console.info("Using fallback projects.");
   }
 
   renderProjects(currentProjects);
@@ -315,7 +369,7 @@ function renderProjects(items) {
 
       return `
       <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-slate-700 transition duration-300">
-        <div class="p-6">
+        <div class="p-5 sm:p-6">
           <div class="flex justify-between items-start mb-4">
             <span class="text-[10px] mono uppercase tracking-wider px-2.5 py-1 rounded-md bg-slate-900 border border-slate-700 text-cyan-400">${p.category}</span>
             <div class="flex items-center gap-3 text-slate-400">
@@ -335,10 +389,10 @@ function renderProjects(items) {
               }
             </div>
           </div>
-          <h4 class="text-xl font-bold text-white mb-2">${p.title}</h4>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">${p.description}</p>
+          <h4 class="text-lg sm:text-xl font-bold text-white mb-2">${p.title}</h4>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">${p.description}</p>
         </div>
-        <div class="px-6 pb-6 pt-0 border-t border-slate-800/60 mt-auto">
+        <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0 border-t border-slate-800/60 mt-auto">
           <div class="flex flex-wrap gap-2 pt-4">
             ${(Array.isArray(p.technologies) ? p.technologies : [])
               .map(
@@ -390,7 +444,7 @@ async function fetchExperiences() {
       if (data.length > 0) experiences = data;
     }
   } catch (_) {
-    console.info("Backend unreachable, using fallback experiences.");
+    console.info("Using fallback experiences.");
   }
 
   const container = document.getElementById("timelineList");
@@ -400,12 +454,12 @@ async function fetchExperiences() {
     .map(
       (item) => `
     <div class="relative group">
-      <div class="absolute -left-[33px] md:-left-[41px] top-1.5 w-4 h-4 rounded-full bg-cyan-500 ring-4 ring-[#0a0f1d]"></div>
-      <div class="glass-panel p-6 rounded-xl border border-slate-800">
+      <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-cyan-500 ring-4 ring-[#0a0f1d]"></div>
+      <div class="glass-panel p-5 sm:p-6 rounded-xl border border-slate-800">
         <span class="text-xs mono text-cyan-400 font-semibold">${item.period}</span>
-        <h4 class="text-lg font-bold text-white mt-1">${item.title}</h4>
-        <div class="text-sm font-medium text-slate-300 mb-2">${item.organization}</div>
-        <p class="text-sm text-slate-400 leading-relaxed">${item.description}</p>
+        <h4 class="text-base sm:text-lg font-bold text-white mt-1">${item.title}</h4>
+        <div class="text-xs sm:text-sm font-medium text-slate-300 mb-2">${item.organization}</div>
+        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">${item.description}</p>
       </div>
     </div>
   `,
@@ -442,7 +496,7 @@ function setupContactForm() {
 
       if (res.ok) {
         alertBox.className =
-          "text-sm p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300";
+          "text-xs sm:text-sm p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300";
         alertBox.innerText = "Thank you! Your message has been received.";
         alertBox.classList.remove("hidden");
         form.reset();
@@ -451,9 +505,9 @@ function setupContactForm() {
       }
     } catch (err) {
       alertBox.className =
-        "text-sm p-4 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-300";
+        "text-xs sm:text-sm p-4 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-300";
       alertBox.innerText =
-        err.message || "Failed to submit. Ensure the backend server is active.";
+        err.message || "Failed to submit. Please ensure your backend is live.";
       alertBox.classList.remove("hidden");
     } finally {
       submitBtn.disabled = false;
