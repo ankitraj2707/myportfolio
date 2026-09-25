@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Ankit Raj | Full-Stack Developer &amp; CSE Student</title>
+    <meta
+      name="description"
+      content="Portfolio of Ankit Raj, Full-Stack Developer specializing in Node.js, Express, PostgreSQL, Prisma, Supabase, and modern web applications."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ankit Raj | Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="Clean, responsive and scalable web solutions built with modern technology."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body
+    class="bg-[#0a0f1d] text-slate-100 antialiased selection:bg-cyan-500 selection:text-black relative overflow-x-hidden"
+  >
+    <!-- Background Decorative Glowing Accents -->
+    <div
+      class="glow-blob bg-cyan-500 w-72 sm:w-96 h-72 sm:h-96 top-5 sm:top-10 left-[-60px] sm:left-[-80px]"
+    ></div>
+    <div
+      class="glow-blob bg-violet-600 w-80 sm:w-[450px] h-80 sm:h-[450px] top-[30%] right-[-80px] sm:right-[-100px]"
+    ></div>
+    <div
+      class="glow-blob bg-indigo-500 w-72 sm:w-96 h-72 sm:h-96 bottom-40 left-1/4"
+    ></div>
+
+    <!-- Sticky Navbar -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between"
+      >
+        <a
+          href="#hero"
+          class="text-lg sm:text-xl font-bold tracking-tight text-white flex items-center gap-2.5"
+        >
+          <img
+            src="./assets/Passportphoto.jpg"
+            alt="Ankit Raj"
+            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-cyan-400 shadow-md"
+            onerror="this.style.display = 'none'"
+          />
+          <span
+            ><span class="mono text-cyan-400">&lt;AR/&gt;</span> Ankit Raj</span
+          >
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav
+          class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300"
+        >
+          <a href="#about" class="hover:text-cyan-400 transition-colors"
+            >About</a
+          >
+          <a href="#skills" class="hover:text-cyan-400 transition-colors"
+            >Skills</a
+          >
+          <a href="#projects" class="hover:text-cyan-400 transition-colors"
+            >Projects</a
+          >
+          <a href="#certificates" class="hover:text-cyan-400 transition-colors"
+            >Certifications</a
+          >
+          <a href="#experience" class="hover:text-cyan-400 transition-colors"
+            >Experience</a
+          >
+          <a href="#services" class="hover:text-cyan-400 transition-colors"
+            >Services</a
+          >
+          <a href="#contact" class="hover:text-cyan-400 transition-colors"
+            >Contact</a
+          >
+        </nav>
+
+        <!-- Desktop Contact and Social Buttons -->
+        <div class="hidden lg:flex items-center gap-4">
+          <a
+            href="mailto:krankit2007@gmail.com"
+            class="p-2 text-slate-400 hover:text-cyan-400 transition"
+            title="Email: krankit2007@gmail.com"
+          >
+            <i data-lucide="mail" class="w-5 h-5"></i>
+          </a>
+          <a
+            href="https://github.com/ankitraj2707"
+            target="_blank"
+            rel="noreferrer"
+            class="p-2 text-slate-400 hover:text-white transition"
+            title="GitHub Profile"
+          >
+            <i data-lucide="github" class="w-5 h-5"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ankitraj2707/"
+            target="_blank"
+            rel="noreferrer"
+            class="p-2 text-slate-400 hover:text-white transition"
+            title="LinkedIn Profile"
+          >
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+          </a>
+          <a
+            href="admin.html"
+            class="px-4 py-2 border border-slate-700 hover:border-cyan-500 text-xs rounded-full mono transition"
+          >
+            Admin Portal
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <div class="flex items-center gap-2 lg:hidden">
+          <a
+            href="tel:+916207588850"
+            class="p-2 text-slate-400 hover:text-emerald-400 transition"
+            aria-label="Call Ankit"
+          >
+            <i data-lucide="phone" class="w-5 h-5"></i>
+          </a>
+          <button
+            id="mobileMenuBtn"
+            class="p-2 text-slate-300 hover:text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Drawer -->
+      <div
+        id="mobileMenu"
+        class="hidden lg:hidden glass-panel border-b border-slate-800 px-6 py-6 space-y-4 max-h-[85vh] overflow-y-auto"
+      >
+        <div class="flex flex-col space-y-3 font-medium text-base">
+          <a
+            href="#about"
+            class="mobile-nav-link block text-slate-300 hover:text-cyan-400 py-1"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="mobile-nav-link block text-slate-300 hover:text-cyan-400 py-1"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="mobile-nav-link block text-slate-300 hover:text-cyan-400 py-1"
+            >Projects</a
+          >
+          <a
+            href="#certificates"
+            class="mobile-nav-link block text-slate-300 hover:text-cyan-400 py-1"
+            >Certifications</a
+          >
+          <a
+            href="#experience"
+            class="mobile-nav-link block text-slate-300 hover:text-cyan-400 py-1"
+            >Experience</a
+          >
+          <a
+            href="#services"
+            class="mobile-nav-link block text-slate-300 hover:text-cyan-400 py-1"
+            >Services</a
+          >
+          <a
+            href="#contact"
+            class="mobile-nav-link block text-slate-300 hover:text-cyan-400 py-1"
+            >Contact</a
+          >
+        </div>
+
+        <div class="pt-4 flex flex-col gap-3 border-t border-slate-800">
+          <div class="flex items-center justify-around py-2">
+            <a
+              href="mailto:krankit2007@gmail.com"
+              class="p-2 text-slate-300 hover:text-cyan-400 flex items-center gap-2 text-sm mono"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i> Email
+            </a>
+            <a
+              href="https://github.com/ankitraj2707"
+              target="_blank"
+              class="p-2 text-slate-300 hover:text-white flex items-center gap-2 text-sm mono"
+            >
+              <i data-lucide="github" class="w-5 h-5"></i> GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ankitraj2707/"
+              target="_blank"
+              class="p-2 text-slate-300 hover:text-white flex items-center gap-2 text-sm mono"
+            >
+              <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
+            </a>
+          </div>
+          <a
+            href="admin.html"
+            class="w-full text-center py-2.5 border border-slate-700 hover:border-cyan-500 text-xs rounded-lg mono transition"
+          >
+            Admin Portal
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section
+      id="hero"
+      class="min-h-screen relative pt-28 sm:pt-36 pb-16 flex items-center max-w-7xl mx-auto px-4 sm:px-6"
+    >
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full"
+      >
+        <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs mono"
+          >
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            Available for Internships &amp; Roles
+          </div>
+          <h1
+            class="text-3.5xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight"
+          >
+            Hi, I'm
+            <span
+              class="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent"
+              >Ankit Raj</span
+            >
+          </h1>
+          <h2
+            class="text-lg sm:text-xl lg:text-2xl text-slate-300 font-medium leading-snug"
+          >
+            Full-Stack Developer &amp; Computer Science Engineering Student
+          </h2>
+          <p
+            class="text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed text-sm sm:text-base"
+          >
+            Engineering scalable web architectures and performant digital
+            experiences. Grounded in advanced data structures, algorithms,
+            robust database modeling, and clean full-stack paradigms.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2"
+          >
+            <a
+              href="#projects"
+              class="w-full sm:w-auto text-center px-6 py-3.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 font-semibold text-slate-950 hover:opacity-90 shadow-lg shadow-cyan-500/20 transition duration-200"
+            >
+              View My Work
+            </a>
+            <a
+              href="#contact"
+              class="w-full sm:w-auto text-center px-6 py-3.5 rounded-lg border border-slate-700 bg-slate-900/60 font-medium hover:border-slate-500 hover:bg-slate-800 transition duration-200"
+            >
+              Contact Me
+            </a>
+          </div>
+
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4 text-slate-400"
+          >
+            <div class="flex flex-wrap items-center justify-center gap-3">
+              <a
+                href="mailto:krankit2007@gmail.com"
+                class="flex items-center gap-1.5 hover:text-cyan-400 transition text-xs mono bg-slate-900/50 px-3 py-1.5 rounded-full border border-slate-800"
+              >
+                <i data-lucide="mail" class="w-3.5 h-3.5 text-cyan-400"></i>
+                krankit2007@gmail.com
+              </a>
+              <a
+                href="tel:+916207588850"
+                class="flex items-center gap-1.5 hover:text-emerald-400 transition text-xs mono bg-slate-900/50 px-3 py-1.5 rounded-full border border-slate-800"
+              >
+                <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i>
+                +91 6207588850
+              </a>
+            </div>
+            <div class="flex items-center gap-3">
+              <a
+                href="https://github.com/ankitraj2707"
+                target="_blank"
+                rel="noreferrer"
+                class="hover:text-cyan-400 transition p-1"
+                title="GitHub"
+              >
+                <i data-lucide="github" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ankitraj2707/"
+                target="_blank"
+                rel="noreferrer"
+                class="hover:text-cyan-400 transition p-1"
+                title="LinkedIn"
+              >
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </a>
+              <span
+                class="text-xs mono text-slate-500 pl-1 border-l border-slate-800"
+                >India</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Photo & Status Card -->
+        <div
+          class="lg:col-span-5 flex justify-center order-first lg:order-last"
+        >
+          <div class="relative group max-w-xs sm:max-w-sm w-full">
+            <div
+              class="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 to-violet-600 rounded-3xl blur-lg opacity-40 group-hover:opacity-75 transition duration-500"
+            ></div>
+
+            <div
+              class="relative glass-panel p-3.5 sm:p-4 rounded-3xl border border-slate-700/60 shadow-2xl"
+            >
+              <div
+                class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-slate-900 border border-slate-800"
+              >
+                <img
+                  src="./assets/Passportphoto.jpg"
+                  alt="Ankit Raj - Full-Stack Developer"
+                  class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500 ease-out"
+                  onerror="
+                    this.src =
+                      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600'
+                  "
+                />
+
+                <div
+                  class="absolute bottom-2.5 left-2.5 right-2.5 glass-panel px-3 py-2 rounded-xl border border-slate-700/50 flex items-center justify-between backdrop-blur-md bg-slate-950/75"
+                >
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"
+                    ></span>
+                    <span class="text-xs font-semibold text-slate-200"
+                      >Open to Work</span
+                    >
+                  </div>
+                  <span
+                    class="text-[10px] mono text-cyan-400 bg-cyan-950/70 border border-cyan-800/60 px-2 py-0.5 rounded"
+                    >India</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="pt-3 px-1 flex items-center justify-between text-xs mono text-slate-400"
+              >
+                <span>Full-Stack Engineer</span>
+                <span class="text-violet-400 font-semibold">CSE '27</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT ME -->
+    <section
+      id="about"
+      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal"
+    >
+      <div class="max-w-3xl mb-12">
+        <h2 class="text-xs mono uppercase tracking-wider text-cyan-400 mb-2">
+          01. About Me
+        </h2>
+        <h3 class="text-2xl sm:text-3xl font-bold">
+          Bridging Foundations with Real-World Engineering
+        </h3>
+        <p class="text-slate-400 mt-4 leading-relaxed text-sm sm:text-base">
+          As a Computer Science Engineering student, I combine core CS
+          fundamentals with practical full-stack paradigms. Certified in
+          advanced algorithm designs, sorting, graph theory, and cryptographic
+          systems from the University of Colorado Boulder[cite: 3, 4, 5], I
+          design clean architectural systems with PostgreSQL &amp; Prisma,
+          secure Node.js APIs, and responsive interfaces.
+        </p>
+      </div>
+
+      <!-- Animated Statistics Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div
+          class="glass-panel p-5 sm:p-6 rounded-xl border border-slate-800 text-center"
+        >
+          <div
+            class="text-3xl sm:text-4xl font-extrabold text-cyan-400 counter"
+            data-target="3"
+          >
+            0
+          </div>
+          <div
+            class="text-[11px] sm:text-xs text-slate-400 mono uppercase tracking-wider mt-2"
+          >
+            Projects Built
+          </div>
+        </div>
+        <div
+          class="glass-panel p-5 sm:p-6 rounded-xl border border-slate-800 text-center"
+        >
+          <div
+            class="text-3xl sm:text-4xl font-extrabold text-violet-400 counter"
+            data-target="5"
+          >
+            0
+          </div>
+          <div
+            class="text-[11px] sm:text-xs text-slate-400 mono uppercase tracking-wider mt-2"
+          >
+            Technologies
+          </div>
+        </div>
+        <div
+          class="glass-panel p-5 sm:p-6 rounded-xl border border-slate-800 text-center"
+        >
+          <div
+            class="text-3xl sm:text-4xl font-extrabold text-emerald-400 counter"
+            data-target="5"
+          >
+            0
+          </div>
+          <div
+            class="text-[11px] sm:text-xs text-slate-400 mono uppercase tracking-wider mt-2"
+          >
+            Certifications
+          </div>
+        </div>
+        <div
+          class="glass-panel p-5 sm:p-6 rounded-xl border border-slate-800 text-center"
+        >
+          <div
+            class="text-3xl sm:text-4xl font-extrabold text-amber-400 counter"
+            data-target="2"
+          >
+            0
+          </div>
+          <div
+            class="text-[11px] sm:text-xs text-slate-400 mono uppercase tracking-wider mt-2"
+          >
+            Years of Learning
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SKILLS -->
+    <section
+      id="skills"
+      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal"
+    >
+      <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <h2 class="text-xs mono uppercase tracking-wider text-cyan-400 mb-2">
+          02. Technical Arsenal
+        </h2>
+        <h3 class="text-2xl sm:text-3xl font-bold">
+          Skills &amp; Proficiencies
+        </h3>
+        <p class="text-slate-400 mt-2 text-sm sm:text-base">
+          Grouped competencies across the full stack development lifecycle.
+        </p>
+      </div>
+
+      <div
+        id="skillsGrid"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+      ></div>
+    </section>
+
+    <!-- 4. PROJECTS -->
+    <section
+      id="projects"
+      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal"
+    >
+      <div
+        class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12"
+      >
+        <div>
+          <h2 class="text-xs mono uppercase tracking-wider text-cyan-400 mb-2">
+            03. Portfolio
+          </h2>
+          <h3 class="text-2xl sm:text-3xl font-bold">Featured Projects</h3>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-4 md:mt-0" id="projectFilters">
+          <button
+            data-filter="all"
+            class="filter-btn active px-3.5 py-1.5 rounded-full text-xs mono font-medium bg-cyan-500 text-slate-950"
+          >
+            All
+          </button>
+          <button
+            data-filter="fullstack"
+            class="filter-btn px-3.5 py-1.5 rounded-full text-xs mono font-medium bg-slate-900 border border-slate-800 text-slate-300 hover:border-slate-700"
+          >
+            Full Stack
+          </button>
+          <button
+            data-filter="frontend"
+            class="filter-btn px-3.5 py-1.5 rounded-full text-xs mono font-medium bg-slate-900 border border-slate-800 text-slate-300 hover:border-slate-700"
+          >
+            Frontend
+          </button>
+          <button
+            data-filter="backend"
+            class="filter-btn px-3.5 py-1.5 rounded-full text-xs mono font-medium bg-slate-900 border border-slate-800 text-slate-300 hover:border-slate-700"
+          >
+            Backend
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="projectsGrid"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+      ></div>
+    </section>
+
+    <!-- 5. CERTIFICATIONS SECTION -->
+    <section
+      id="certificates"
+      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal"
+    >
+      <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <h2 class="text-xs mono uppercase tracking-wider text-cyan-400 mb-2">
+          04. Credentials
+        </h2>
+        <h3 class="text-2xl sm:text-3xl font-bold">Verified Certifications</h3>
+        <p class="text-slate-400 mt-2 text-sm sm:text-base">
+          Academic specializations authorized by University of Colorado Boulder
+          via Coursera[cite: 3, 4, 5].
+        </p>
+      </div>
+
+      <div
+        id="certificatesGrid"
+        class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
+      ></div>
+    </section>
+
+    <!-- 6. EXPERIENCE & EDUCATION -->
+    <section
+      id="experience"
+      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal"
+    >
+      <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <h2 class="text-xs mono uppercase tracking-wider text-cyan-400 mb-2">
+          05. Milestones
+        </h2>
+        <h3 class="text-2xl sm:text-3xl font-bold">
+          Education &amp; Experience Timeline
+        </h3>
+      </div>
+
+      <div
+        class="max-w-3xl mx-auto relative border-l-2 border-slate-800 ml-4 md:ml-auto pl-6 sm:pl-8 space-y-8 sm:space-y-12"
+        id="timelineList"
+      ></div>
+    </section>
+
+    <!-- 7. SERVICES -->
+    <section
+      id="services"
+      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal"
+    >
+      <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <h2 class="text-xs mono uppercase tracking-wider text-cyan-400 mb-2">
+          06. Solutions
+        </h2>
+        <h3 class="text-2xl sm:text-3xl font-bold">What I Build</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div
+          class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition"
+        >
+          <i
+            data-lucide="layers"
+            class="w-9 h-9 sm:w-10 sm:h-10 text-cyan-400 mb-4 sm:mb-5"
+          ></i>
+          <h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">
+            Full-Stack Development
+          </h4>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            End-to-end web apps featuring structured schemas, secure JWT
+            authentication, and clean micro-architectures.
+          </p>
+        </div>
+
+        <div
+          class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 hover:border-violet-500/50 transition"
+        >
+          <i
+            data-lucide="server"
+            class="w-9 h-9 sm:w-10 sm:h-10 text-violet-400 mb-4 sm:mb-5"
+          ></i>
+          <h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">
+            Backend &amp; Database Design
+          </h4>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            RESTful services built with Node.js and Express, relational data
+            design with PostgreSQL, Prisma ORM, and Supabase.
+          </p>
+        </div>
+
+        <div
+          class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition"
+        >
+          <i
+            data-lucide="layout"
+            class="w-9 h-9 sm:w-10 sm:h-10 text-emerald-400 mb-4 sm:mb-5"
+          ></i>
+          <h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">
+            Responsive UI &amp; Web Design
+          </h4>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Clean, mobile-first interfaces developed with semantic HTML5 and
+            modern CSS, emphasizing fast load speeds.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. GITHUB / ACTIVITY SECTION -->
+    <section class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal">
+      <div class="glass-panel p-5 sm:p-8 rounded-2xl border border-slate-800">
+        <div
+          class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8"
+        >
+          <div>
+            <h3 class="text-xl sm:text-2xl font-bold">Engineering Activity</h3>
+            <p class="text-slate-400 text-xs sm:text-sm">
+              Contributions, repositories, and continuous deployments
+            </p>
+          </div>
+          <a
+            href="https://github.com/ankitraj2707"
+            target="_blank"
+            rel="noreferrer"
+            class="inline-block text-center px-4 py-2 border border-slate-700 rounded-lg text-xs mono text-cyan-400 hover:bg-slate-800 transition"
+          >
+            View Profile on GitHub
+          </a>
+        </div>
+
+        <!-- Touch-scrollable contribution container with custom styling -->
+        <div class="overflow-x-auto pb-2 scrollbar-thin">
+          <div
+            class="inline-grid grid-rows-7 grid-flow-col gap-1.5 min-w-[650px]"
+            id="githubMatrix"
+          ></div>
+        </div>
+
+        <div
+          class="flex items-center justify-between mt-4 text-[11px] sm:text-xs text-slate-500 mono"
+        >
+          <span>Less active</span>
+          <div class="flex gap-1 items-center">
+            <span
+              class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-slate-800 rounded-sm"
+            ></span>
+            <span
+              class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-cyan-950 rounded-sm"
+            ></span>
+            <span
+              class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-cyan-800 rounded-sm"
+            ></span>
+            <span
+              class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-cyan-600 rounded-sm"
+            ></span>
+            <span
+              class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-cyan-400 rounded-sm"
+            ></span>
+          </div>
+          <span>More active</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CONTACT SECTION -->
+    <section
+      id="contact"
+      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal"
+    >
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10 sm:mb-12">
+          <h2 class="text-xs mono uppercase tracking-wider text-cyan-400 mb-2">
+            07. Get in Touch
+          </h2>
+          <h3 class="text-2xl sm:text-3xl font-bold">Contact &amp; Connect</h3>
+          <p class="text-slate-400 mt-2 text-sm sm:text-base">
+            Open to discussing internship roles, software projects, or
+            collaboration opportunities.
+          </p>
+        </div>
+
+        <!-- Quick Contact Cards Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4 mb-6 sm:mb-8"
+        >
+          <a
+            href="mailto:krankit2007@gmail.com"
+            class="glass-panel p-4 sm:p-5 rounded-xl border border-slate-800 hover:border-cyan-500/50 transition flex items-center gap-3.5 group"
+          >
+            <div
+              class="p-3 rounded-lg bg-cyan-500/10 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-black transition"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </div>
+            <div class="overflow-hidden">
+              <div class="text-[10px] mono text-slate-500 uppercase">
+                Email Me
+              </div>
+              <div class="text-xs sm:text-sm font-semibold text-white truncate">
+                krankit2007@gmail.com
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="tel:+916207588850"
+            class="glass-panel p-4 sm:p-5 rounded-xl border border-slate-800 hover:border-emerald-500/50 transition flex items-center gap-3.5 group"
+          >
+            <div
+              class="p-3 rounded-lg bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-black transition"
+            >
+              <i data-lucide="phone" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-[10px] mono text-slate-500 uppercase">
+                Call Me
+              </div>
+              <div class="text-xs sm:text-sm font-semibold text-white">
+                +91 6207588850
+              </div>
+            </div>
+          </a>
+
+          <div
+            class="glass-panel p-4 sm:p-5 rounded-xl border border-slate-800 flex items-center gap-3.5"
+          >
+            <div class="p-3 rounded-lg bg-violet-500/10 text-violet-400">
+              <i data-lucide="map-pin" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-[10px] mono text-slate-500 uppercase">
+                Location
+              </div>
+              <div class="text-xs sm:text-sm font-semibold text-white">
+                India
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Message Form -->
+        <div class="glass-panel p-5 sm:p-8 rounded-2xl border border-slate-800">
+          <form id="contactForm" class="space-y-4 sm:space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              <div>
+                <label class="block text-xs mono text-slate-400 mb-1.5 sm:mb-2"
+                  >Your Name</label
+                >
+                <input
+                  type="text"
+                  id="contactName"
+                  required
+                  class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-3 text-sm focus:border-cyan-400 focus:outline-none transition"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div>
+                <label class="block text-xs mono text-slate-400 mb-1.5 sm:mb-2"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="contactEmail"
+                  required
+                  class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-3 text-sm focus:border-cyan-400 focus:outline-none transition"
+                  placeholder="john@example.com"
+                />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs mono text-slate-400 mb-1.5 sm:mb-2"
+                >Subject</label
+              >
+              <input
+                type="text"
+                id="contactSubject"
+                required
+                class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-3 text-sm focus:border-cyan-400 focus:outline-none transition"
+                placeholder="Collaboration / Job Opportunity"
+              />
+            </div>
+            <div>
+              <label class="block text-xs mono text-slate-400 mb-1.5 sm:mb-2"
+                >Message</label
+              >
+              <textarea
+                id="contactMessage"
+                rows="4"
+                required
+                class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-3 text-sm focus:border-cyan-400 focus:outline-none transition"
+                placeholder="Hello Ankit, let's talk about..."
+              ></textarea>
+            </div>
+
+            <div
+              id="formAlert"
+              class="hidden text-xs sm:text-sm p-3.5 sm:p-4 rounded-lg"
+            ></div>
+
+            <button
+              type="submit"
+              id="submitBtn"
+              class="w-full py-3.5 sm:py-4 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold tracking-wide transition duration-200"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="border-t border-slate-900 py-8 sm:py-10 text-center text-xs text-slate-500 mono space-y-2 px-4"
+    >
+      <p>
+        © 2026 Ankit Raj. Engineered with HTML5, Tailwind CSS, Node.js &amp;
+        PostgreSQL.
+      </p>
+      <p
+        class="text-slate-400 flex flex-wrap justify-center items-center gap-2"
+      >
+        <a
+          href="mailto:krankit2007@gmail.com"
+          class="hover:text-cyan-400 transition"
+          >krankit2007@gmail.com</a
+        >
+        <span class="hidden sm:inline">•</span>
+        <a href="tel:+916207588850" class="hover:text-emerald-400 transition"
+          >+91 6207588850</a
+        >
+      </p>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

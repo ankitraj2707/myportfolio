@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ankit Raj | Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="bg-[#0a0f1d] text-slate-100 min-h-screen">
+    <div
+      id="loginView"
+      class="min-h-screen flex items-center justify-center p-6"
+    >
+      <div
+        class="glass-panel p-8 rounded-2xl border border-slate-800 w-full max-w-md"
+      >
+        <h2 class="text-2xl font-bold mb-2">Admin Authentication</h2>
+        <p class="text-xs text-slate-400 mb-6 mono">
+          Restricted panel for Ankit Raj
+        </p>
+
+        <form id="adminLoginForm" class="space-y-4">
+          <div>
+            <label class="block text-xs mono text-slate-400 mb-1">Email</label>
+            <input
+              type="email"
+              id="loginEmail"
+              required
+              class="w-full bg-slate-900 border border-slate-800 rounded px-3 py-2 text-sm focus:outline-none focus:border-cyan-400"
+              value="ankit@example.com"
+            />
+          </div>
+          <div>
+            <label class="block text-xs mono text-slate-400 mb-1"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="loginPassword"
+              required
+              class="w-full bg-slate-900 border border-slate-800 rounded px-3 py-2 text-sm focus:outline-none focus:border-cyan-400"
+              placeholder="••••••••"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-2 rounded text-sm transition"
+          >
+            Authenticate
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div id="dashboardView" class="hidden min-h-screen p-8 max-w-7xl mx-auto">
+      <div
+        class="flex justify-between items-center mb-8 border-b border-slate-800 pb-4"
+      >
+        <div>
+          <h1 class="text-2xl font-bold">Portfolio Control Center</h1>
+          <p class="text-xs mono text-slate-400">Authenticated via JWT</p>
+        </div>
+        <div class="flex gap-4">
+          <a
+            href="index.html"
+            class="px-4 py-2 border border-slate-800 hover:border-slate-700 text-xs rounded mono"
+            >View Public Site</a
+          >
+          <button
+            id="logoutBtn"
+            class="px-4 py-2 bg-rose-600/80 hover:bg-rose-500 text-xs rounded font-bold mono"
+          >
+            Log Out
+          </button>
+        </div>
+      </div>
+
+      <!-- Admin Tabs -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Create Project -->
+        <div class="glass-panel p-6 rounded-xl border border-slate-800">
+          <h3 class="text-lg font-bold mb-4">Add Project</h3>
+          <form id="addProjectForm" class="space-y-4 text-xs">
+            <input
+              type="text"
+              id="projTitle"
+              placeholder="Project Title"
+              required
+              class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded"
+            />
+            <select
+              id="projCat"
+              class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded"
+            >
+              <option value="fullstack">Full Stack</option>
+              <option value="frontend">Frontend</option>
+              <option value="backend">Backend</option>
+              <option value="ai">AI</option>
+            </select>
+            <input
+              type="text"
+              id="projTech"
+              placeholder="Technologies (comma separated, e.g. Node, React, Postgres)"
+              required
+              class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded"
+            />
+            <input
+              type="text"
+              id="projGithub"
+              placeholder="GitHub URL"
+              class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded"
+            />
+            <input
+              type="text"
+              id="projLive"
+              placeholder="Live Demo URL"
+              class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded"
+            />
+            <textarea
+              id="projDesc"
+              placeholder="Description"
+              rows="3"
+              required
+              class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded"
+            ></textarea>
+            <button
+              type="submit"
+              class="w-full bg-cyan-500 text-slate-950 font-bold py-2 rounded"
+            >
+              Commit Project
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Messages Table -->
+        <div class="glass-panel p-6 rounded-xl border border-slate-800">
+          <h3 class="text-lg font-bold mb-4">Contact Inbox</h3>
+          <div id="messagesList" class="space-y-3 max-h-96 overflow-y-auto">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>
