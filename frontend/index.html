@@ -6,7 +6,9 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
     />
-    <title>Ankit Raj | Full-Stack Developer &amp; CSE Student</title>
+    <title>
+      Ankit Raj | Full-Stack Developer &amp; CSE Student &amp; Tech Enthusiast
+    </title>
     <meta
       name="description"
       content="Portfolio of Ankit Raj, Full-Stack Developer specializing in Node.js, Express, PostgreSQL, Prisma, Supabase, and modern web applications."
@@ -29,15 +31,21 @@
   <body
     class="bg-[#0a0f1d] text-slate-100 antialiased selection:bg-cyan-500 selection:text-black relative overflow-x-hidden"
   >
+    <!-- Custom Trailing Cursor & Mouse-following Glow -->
+
+    <div id="mouseGlow"></div>
+
     <!-- Background Decorative Glowing Accents -->
     <div
       class="glow-blob bg-cyan-500 w-72 sm:w-96 h-72 sm:h-96 top-5 sm:top-10 left-[-60px] sm:left-[-80px]"
     ></div>
     <div
       class="glow-blob bg-violet-600 w-80 sm:w-[450px] h-80 sm:h-[450px] top-[30%] right-[-80px] sm:right-[-100px]"
+      style="animation-delay: -5s"
     ></div>
     <div
       class="glow-blob bg-indigo-500 w-72 sm:w-96 h-72 sm:h-96 bottom-40 left-1/4"
+      style="animation-delay: -9s"
     ></div>
 
     <!-- Sticky Navbar -->
@@ -66,30 +74,44 @@
         <nav
           class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300"
         >
-          <a href="#about" class="hover:text-cyan-400 transition-colors"
+          <a
+            href="#about"
+            class="nav-link hover:text-cyan-400 transition-colors"
             >About</a
           >
-          <a href="#skills" class="hover:text-cyan-400 transition-colors"
+          <a
+            href="#skills"
+            class="nav-link hover:text-cyan-400 transition-colors"
             >Skills</a
           >
-          <a href="#projects" class="hover:text-cyan-400 transition-colors"
+          <a
+            href="#projects"
+            class="nav-link hover:text-cyan-400 transition-colors"
             >Projects</a
           >
-          <a href="#certificates" class="hover:text-cyan-400 transition-colors"
+          <a
+            href="#certificates"
+            class="nav-link hover:text-cyan-400 transition-colors"
             >Certifications</a
           >
-          <a href="#experience" class="hover:text-cyan-400 transition-colors"
+          <a
+            href="#experience"
+            class="nav-link hover:text-cyan-400 transition-colors"
             >Experience</a
           >
-          <a href="#services" class="hover:text-cyan-400 transition-colors"
+          <a
+            href="#services"
+            class="nav-link hover:text-cyan-400 transition-colors"
             >Services</a
           >
-          <a href="#contact" class="hover:text-cyan-400 transition-colors"
+          <a
+            href="#contact"
+            class="nav-link hover:text-cyan-400 transition-colors"
             >Contact</a
           >
         </nav>
 
-        <!-- Desktop Contact and Social Buttons (Admin Portal Removed) -->
+        <!-- Desktop Contact and Social Buttons -->
         <div class="hidden lg:flex items-center gap-4">
           <a
             href="mailto:krankit2007@gmail.com"
@@ -137,7 +159,7 @@
         </div>
       </div>
 
-      <!-- Mobile Dropdown Drawer (Admin Portal Removed) -->
+      <!-- Mobile Dropdown Drawer -->
       <div
         id="mobileMenu"
         class="hidden lg:hidden glass-panel border-b border-slate-800 px-6 py-6 space-y-4 max-h-[85vh] overflow-y-auto"
@@ -210,14 +232,14 @@
     <!-- 1. HERO SECTION -->
     <section
       id="hero"
-      class="min-h-screen relative pt-28 sm:pt-36 pb-16 flex items-center max-w-7xl mx-auto px-4 sm:px-6"
+      class="min-h-screen relative pt-28 sm:pt-36 pb-16 flex items-center max-w-7xl mx-auto px-4 sm:px-6 z-10"
     >
       <div
         class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full"
       >
         <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
           <div
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs mono"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs mono air-float-delayed"
           >
             <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
             Available for Internships &amp; Roles
@@ -232,17 +254,16 @@
             >
           </h1>
           <h2
-            class="text-lg sm:text-xl lg:text-2xl text-slate-300 font-medium leading-snug"
+            class="text-lg sm:text-xl lg:text-2xl text-slate-300 font-medium leading-snug min-h-[32px] flex items-center justify-center lg:justify-start"
           >
-            Full-Stack Developer &amp; Computer Science Engineering Student
+            <span id="typewriterText"></span
+            ><span class="typewriter-cursor">|</span>
           </h2>
           <p
             class="text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed text-sm sm:text-base"
           >
-            Engineering scalable web architectures and performant digital
-            experiences. Grounded in advanced data structures, algorithms,
-            robust database modeling, and clean full-stack paradigms[cite: 3, 4,
-            5, 8].
+            I build responsive, scalable web applications with modern
+            technologies and a focus on clean, user-friendly experiences.
           </p>
 
           <div
@@ -250,13 +271,13 @@
           >
             <a
               href="#projects"
-              class="w-full sm:w-auto text-center px-6 py-3.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 font-semibold text-slate-950 hover:opacity-90 shadow-lg shadow-cyan-500/20 transition duration-200"
+              class="magnetic-btn w-full sm:w-auto text-center px-6 py-3.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 font-semibold text-slate-950 hover:opacity-90 shadow-lg shadow-cyan-500/20 transition duration-200"
             >
               View My Work
             </a>
             <a
               href="#contact"
-              class="w-full sm:w-auto text-center px-6 py-3.5 rounded-lg border border-slate-700 bg-slate-900/60 font-medium hover:border-slate-500 hover:bg-slate-800 transition duration-200"
+              class="magnetic-btn w-full sm:w-auto text-center px-6 py-3.5 rounded-lg border border-slate-700 bg-slate-900/60 font-medium hover:border-slate-500 hover:bg-slate-800 transition duration-200"
             >
               Contact Me
             </a>
@@ -312,7 +333,10 @@
         <div
           class="lg:col-span-5 flex justify-center order-first lg:order-last"
         >
-          <div class="relative group max-w-xs sm:max-w-sm w-full">
+          <div
+            id="profileCard"
+            class="profile-tilt-card relative group max-w-xs sm:max-w-sm w-full air-float"
+          >
             <div
               class="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 to-violet-600 rounded-3xl blur-lg opacity-40 group-hover:opacity-75 transition duration-500"
             ></div>
@@ -366,7 +390,7 @@
     <!-- 2. ABOUT ME -->
     <section
       id="about"
-      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal"
+      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal z-10 relative"
     >
       <div class="max-w-3xl mb-12">
         <h2 class="text-xs mono uppercase tracking-wider text-cyan-400 mb-2">
@@ -377,23 +401,23 @@
         </h3>
         <p class="text-slate-400 mt-4 leading-relaxed text-sm sm:text-base">
           As a Computer Science Engineering student, I combine core CS
-          fundamentals with practical full-stack paradigms[cite: 8]. Backed by
-          hands-on engineering internships at AstraTech AI and Tata Steel
-          (SNTI)[cite: 8, 9], as well as verified credentials in algorithm
-          design, graphs, and cryptographic systems from the University of
-          Colorado Boulder[cite: 3, 4, 5], I architect clean systems with
-          PostgreSQL, Prisma, Express, and modern responsive frontends[cite: 8].
+          fundamentals with practical full-stack paradigms. Backed by hands-on
+          engineering internships at AstraTech AI and Tata Steel (SNTI), as well
+          as verified credentials in algorithm design, graphs, and cryptographic
+          systems from the University of Colorado Boulder, I architect clean
+          systems with PostgreSQL, Prisma, Express, and modern responsive
+          frontends.
         </p>
       </div>
 
       <!-- Animated Statistics Cards -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
         <div
-          class="glass-panel p-5 sm:p-6 rounded-xl border border-slate-800 text-center"
+          class="glass-panel p-5 sm:p-6 rounded-xl border border-slate-800 text-center hover:border-cyan-500/40 transition"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-cyan-400 counter"
-            data-target="4"
+            data-target="10"
           >
             0
           </div>
@@ -404,11 +428,11 @@
           </div>
         </div>
         <div
-          class="glass-panel p-5 sm:p-6 rounded-xl border border-slate-800 text-center"
+          class="glass-panel p-5 sm:p-6 rounded-xl border border-slate-800 text-center hover:border-violet-500/40 transition"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-violet-400 counter"
-            data-target="5"
+            data-target="12"
           >
             0
           </div>
@@ -419,7 +443,7 @@
           </div>
         </div>
         <div
-          class="glass-panel p-5 sm:p-6 rounded-xl border border-slate-800 text-center"
+          class="glass-panel p-5 sm:p-6 rounded-xl border border-slate-800 text-center hover:border-emerald-500/40 transition"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-emerald-400 counter"
@@ -434,11 +458,11 @@
           </div>
         </div>
         <div
-          class="glass-panel p-5 sm:p-6 rounded-xl border border-slate-800 text-center"
+          class="glass-panel p-5 sm:p-6 rounded-xl border border-slate-800 text-center hover:border-amber-500/40 transition"
         >
           <div
             class="text-3xl sm:text-4xl font-extrabold text-amber-400 counter"
-            data-target="2"
+            data-target="3"
           >
             0
           </div>
@@ -454,7 +478,7 @@
     <!-- 3. SKILLS -->
     <section
       id="skills"
-      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal"
+      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal z-10 relative"
     >
       <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
         <h2 class="text-xs mono uppercase tracking-wider text-cyan-400 mb-2">
@@ -477,7 +501,7 @@
     <!-- 4. PROJECTS -->
     <section
       id="projects"
-      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal"
+      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal z-10 relative"
     >
       <div
         class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12"
@@ -525,7 +549,7 @@
     <!-- 5. CERTIFICATIONS SECTION -->
     <section
       id="certificates"
-      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal"
+      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal z-10 relative"
     >
       <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
         <h2 class="text-xs mono uppercase tracking-wider text-cyan-400 mb-2">
@@ -536,7 +560,7 @@
         </h3>
         <p class="text-slate-400 mt-2 text-sm sm:text-base">
           Internships at AstraTech AI &amp; Tata Steel, and University of
-          Colorado Boulder academic specializations[cite: 3, 4, 5, 8, 9].
+          Colorado Boulder academic specializations.
         </p>
       </div>
 
@@ -549,7 +573,7 @@
     <!-- 6. EXPERIENCE & EDUCATION -->
     <section
       id="experience"
-      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal"
+      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal z-10 relative"
     >
       <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
         <h2 class="text-xs mono uppercase tracking-wider text-cyan-400 mb-2">
@@ -569,7 +593,7 @@
     <!-- 7. SERVICES -->
     <section
       id="services"
-      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal"
+      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal z-10 relative"
     >
       <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
         <h2 class="text-xs mono uppercase tracking-wider text-cyan-400 mb-2">
@@ -630,7 +654,9 @@
     </section>
 
     <!-- 8. GITHUB / ACTIVITY SECTION -->
-    <section class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal">
+    <section
+      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal z-10 relative"
+    >
       <div class="glass-panel p-5 sm:p-8 rounded-2xl border border-slate-800">
         <div
           class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8"
@@ -687,7 +713,7 @@
     <!-- 9. CONTACT SECTION -->
     <section
       id="contact"
-      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal"
+      class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 reveal z-10 relative"
     >
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-10 sm:mb-12">
@@ -771,6 +797,7 @@
                 <input
                   type="text"
                   id="contactName"
+                  name="name"
                   required
                   class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-3 text-sm focus:border-cyan-400 focus:outline-none transition"
                   placeholder="John Doe"
@@ -783,6 +810,7 @@
                 <input
                   type="email"
                   id="contactEmail"
+                  name="email"
                   required
                   class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-3 text-sm focus:border-cyan-400 focus:outline-none transition"
                   placeholder="john@example.com"
@@ -796,6 +824,7 @@
               <input
                 type="text"
                 id="contactSubject"
+                name="subject"
                 required
                 class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-3 text-sm focus:border-cyan-400 focus:outline-none transition"
                 placeholder="Collaboration / Job Opportunity"
@@ -807,6 +836,7 @@
               >
               <textarea
                 id="contactMessage"
+                name="message"
                 rows="4"
                 required
                 class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-3 text-sm focus:border-cyan-400 focus:outline-none transition"
@@ -833,7 +863,7 @@
 
     <!-- Footer -->
     <footer
-      class="border-t border-slate-900 py-8 sm:py-10 text-center text-xs text-slate-500 mono space-y-2 px-4"
+      class="border-t border-slate-900 py-8 sm:py-10 text-center text-xs text-slate-500 mono space-y-2 px-4 z-10 relative"
     >
       <p>
         © 2026 Ankit Raj. Engineered with HTML5, Tailwind CSS, Node.js &amp;
